@@ -68,10 +68,10 @@ export class EventsService {
       if (spot.status === TicketStatus.reserved) {
         return spot.name;
       } else {
-        return 'null'
+        return 'null';
       }
     });
-    if (reservedSpots.join('').replaceAll('null','').length != 0) {
+    if (reservedSpots.join('').replaceAll('null', '').length != 0) {
       throw new HttpException(
         `Spots ${reservedSpots.join(', ')} are not available for reservation`,
         400,
